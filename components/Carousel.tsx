@@ -40,9 +40,14 @@ const MyCarousel = ({ items }: Props) => {
         onExited={() => setAnimating(false)}
         key={item.index}
       >
-        <div className="slide-content">
+        <div className="slide-content scrollbar">
           <h2 className="slide-title">{item.title}</h2>
-          <p>{item.description}</p>
+          <p className="slide-description">{item.description}</p>
+          <ul>
+            {item.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
         </div>
         <CarouselCaption
           captionHeader={item.date}

@@ -4,4 +4,5 @@ export default interface SlidesScolar {
   description: string;
   location: string;
   date: string;
+  details: string[];
 }
