@@ -84,6 +84,33 @@ const professionalItems = [
   },
 ];
 
+const hobbiesItems = [
+  {
+    index: 1,
+    title: "Sports en tout genres",
+    description: "",
+    location: "",
+    date: "2006-",
+    details: [
+      "Pratique du football depuis 2006 (Clermont Foot jusqu'en 2010)",
+      "Ceinture noire 1dan de karaté au Gorinkan (Clermont-Ferrand)",
+      "Cardio et course à pied",
+    ],
+  },
+  {
+    index: 2,
+    title: "Jeux de stratégies et jeux vidéos",
+    description: "",
+    location: "",
+    date: "depuis Toujours",
+    details: [
+      "Grand passionné des jeux Pokemon",
+      "Participation à différents tournois organisés par le BDE (League of Legends)",
+      "Jeu de go: membre de la Fédération Française de Go (2kyu)",
+    ],
+  },
+];
+
 export default function cv() {
   return (
     <>
@@ -94,6 +121,10 @@ export default function cv() {
       <div className="cv-section">
         <h1 className="cv-section-title">Parcours scolaire</h1>
         <Carousel items={scolarItems}></Carousel>
+      </div>
+      <div className="cv-section">
+        <h1 className="cv-section-title">Centres d'intérêt</h1>
+        <Carousel items={hobbiesItems}></Carousel>
       </div>
     </>
   );
