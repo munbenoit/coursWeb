@@ -46,12 +46,50 @@ const scolarItems = [
   },
 ];
 
+const professionalItems = [
+  {
+    index: 1,
+    title: "Stage de 2ème année ISIMA",
+    description: "Stage prévu par le cursus d'ingénieur",
+    location: "société Agaetis, Aubière",
+    date: "2019",
+    details: [
+      "Développement Web: React/NextJS, Typescript, Material UI",
+      "Outils de développement: Git, Gitkraken, Azure Devops, Docker",
+      "Architecture: CQRS/Event Sourcing",
+    ],
+  },
+  {
+    index: 2,
+    title: "Alternance 3ème année",
+    description: "3ème année du cursus Ingénieur en alternance",
+    location: "société Agaetis, Aubière",
+    date: "2019-2020",
+    details: [
+      "Développement Web: React/NextJS, Typescript, Google API (Gmail/Captcha)",
+      "Outils de développement: Git, Gitkraken, AWS Lightsail, Docker",
+    ],
+  },
+  {
+    index: 3,
+    title: "Travail en interim",
+    description: "Technicien en broyage de pneumatiques",
+    location: "Procar Récygom, Joze",
+    date: "2015-2018",
+    details: [
+      "Utilisation et maintenance d'un broyeur de pneumatiques",
+      "Traitement de données logistiques avec Excel",
+      "Préparation d'audits internes",
+    ],
+  },
+];
+
 export default function cv() {
   return (
     <>
       <div className="cv-section">
         <h1 className="cv-section-title">Expérience professionnelle</h1>
-        <Carousel items={scolarItems}></Carousel>
+        <Carousel items={professionalItems}></Carousel>
       </div>
       <div className="cv-section">
         <h1 className="cv-section-title">Parcours scolaire</h1>
