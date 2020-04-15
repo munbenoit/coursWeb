@@ -3,8 +3,8 @@ import Navbar from "./NavMenu";
 
 export default function Header() {
   return (
-    <div>
+    <header>
       <Navbar></Navbar>
-    </div>
+    </header>
   );
 }
