@@ -26,6 +26,7 @@ npm run dev
 
 ## Travail à réaliser
 
-- [ ] Jalon 1: créer une page web avec son CV.
+- [x] Créer une page web avec son CV
+- [ ] Modifier la page d'accueil
 
 Contributeur: Benoit Munoz
