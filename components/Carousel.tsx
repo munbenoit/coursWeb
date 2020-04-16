@@ -58,7 +58,12 @@ const MyCarousel = ({ items }: Props) => {
   });
 
   return (
-    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+    <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+      ride={20000}
+    >
       <CarouselIndicators
         items={items}
         activeIndex={activeIndex}
