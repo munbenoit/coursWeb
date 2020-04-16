@@ -45,7 +45,7 @@ const MyCarousel = ({ items }: Props) => {
           <p className="slide-description">{item.description}</p>
           <ul>
             {item.details.map((detail) => (
-              <li>{detail}</li>
+              <li key={detail}>{detail}</li>
             ))}
           </ul>
         </div>

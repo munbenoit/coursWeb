@@ -1,5 +1,19 @@
+.cv-container {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  margin: 0;
+}
+
 .cv-section {
-  max-height: 100vh;
+  scroll-snap-align: end;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .my-container {
+    height: calc(100vh - 56px);
+  }
 }
 
 .cv-section-title {

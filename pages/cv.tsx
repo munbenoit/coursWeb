@@ -113,19 +113,21 @@ const hobbiesItems = [
 
 export default function cv() {
   return (
-    <>
-      <div className="cv-section">
-        <h1 className="cv-section-title">Expérience professionnelle</h1>
-        <Carousel items={professionalItems}></Carousel>
+    <div className="cv-container">
+      <div>
+        <div className="cv-section">
+          <h1 className="cv-section-title">Expérience professionnelle</h1>
+          <Carousel items={professionalItems}></Carousel>
+        </div>
+        <div className="cv-section">
+          <h1 className="cv-section-title">Parcours scolaire</h1>
+          <Carousel items={scolarItems}></Carousel>
+        </div>
+        <div className="cv-section">
+          <h1 className="cv-section-title">Centres d'intérêt</h1>
+          <Carousel items={hobbiesItems}></Carousel>
+        </div>
       </div>
-      <div className="cv-section">
-        <h1 className="cv-section-title">Parcours scolaire</h1>
-        <Carousel items={scolarItems}></Carousel>
-      </div>
-      <div className="cv-section">
-        <h1 className="cv-section-title">Centres d'intérêt</h1>
-        <Carousel items={hobbiesItems}></Carousel>
-      </div>
-    </>
+    </div>
   );
 }
