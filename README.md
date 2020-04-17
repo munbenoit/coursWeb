@@ -24,9 +24,12 @@ npm i
 npm run dev
 ```
 
+Visiter http://localhost:3000
+
 ## Travail à réaliser
 
 - [x] Créer une page web avec son CV
-- [ ] Modifier la page d'accueil
+- [x] Modifier la Home page
+- [ ] Ajouter un footer
 
 Contributeur: Benoit Munoz
