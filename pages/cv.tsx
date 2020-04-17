@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+import Hero from "../components/Hero";
 
 const scolarItems = [
   {
@@ -116,8 +117,15 @@ const hobbiesItems = [
 
 export default function cv() {
   return (
-    <div className="cv-container">
+    <div className="main-container">
       <div>
+        <Hero
+          title="Mon Parcours"
+          quote="Mankind invented the atomic bomb, but no mouse would ever construct
+            a mousetrap."
+          author="Albert Einstein"
+          className="hero cv-hero cv-section"
+        ></Hero>
         <div className="cv-section">
           <h1 className="cv-section-title">Expérience professionnelle</h1>
           <Carousel id="professional" items={professionalItems}></Carousel>

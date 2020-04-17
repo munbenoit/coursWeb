@@ -5,8 +5,14 @@ import IndexCard from "../components/IndexCard";
 
 export default function index() {
   return (
-    <div className="index-container">
-      <Hero className="index-section"></Hero>
+    <div className="main-container">
+      <Hero
+        title="Le cours de Web"
+        quote="Mankind invented the atomic bomb, but no mouse would ever construct
+            a mousetrap."
+        author="Albert Einstein"
+        className="hero index-hero index-section"
+      ></Hero>
       <Jumbotron className="my-0 py-0" fluid>
         <Container fluid className="index-section">
           <h1>Mon Parcours</h1>

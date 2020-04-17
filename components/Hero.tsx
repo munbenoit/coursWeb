@@ -1,21 +1,20 @@
 import React from "react";
-import clsx from "clsx";
 interface Props {
+  title: string;
+  quote: string;
+  author: string;
   className?: string;
 }
 
-export default function Hero({ className }: Props) {
+export default function Hero({ title, quote, author, className }: Props) {
   return (
-    <div className={clsx("hero", className)}>
+    <div className={className}>
       <div className="hero-section">
-        <h1>Le cours de Web</h1>
+        <h1>{title}</h1>
         <blockquote>
-          <i className="quote">
-            Mankind invented the atomic bomb, but no mouse would ever construct
-            a mousetrap.
-          </i>
+          <i className="quote">{quote}</i>
           <br />
-          Albert Einstein
+          {author}
         </blockquote>
       </div>
     </div>

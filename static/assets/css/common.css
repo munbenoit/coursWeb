@@ -12,3 +12,16 @@ h5,
 h6 {
   font-family: "Roboto", sans-serif;
 }
+
+.main-container {
+  height: calc(100vh - 76px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .main-container {
+    height: calc(100vh - 56px);
+  }
+}

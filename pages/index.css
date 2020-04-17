@@ -1,8 +1,15 @@
-.index-container {
+.main-container {
   height: calc(100vh - 76px);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   margin: 0;
+}
+
+.index-hero {
+  background-image: url("../static/assets/images/background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .index-section {

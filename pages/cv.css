@@ -1,19 +1,14 @@
-.cv-container {
-  height: calc(100vh - 76px);
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  margin: 0;
-}
-
 .cv-section {
   scroll-snap-align: end;
   margin: 10px 0;
 }
 
-@media screen and (max-width: 767px) {
-  .cv-container {
-    height: calc(100vh - 56px);
-  }
+.cv-hero {
+  background-image: url("../static/assets/images/jungle.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
 }
 
 .cv-section {

@@ -1,9 +1,5 @@
 .hero {
   height: calc(100vh - 76px);
-  background-image: url("../static/assets/images/background.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
