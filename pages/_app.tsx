@@ -3,11 +3,13 @@ import App from "next/app";
 import React from "react";
 import Layout from "../components/Layout";
 import "../components/Carousel.css";
+import "./index.css";
 import "./cv.css";
 import "../components/Layout.css";
 import "../components/NavMenu.css";
 import "../components/Hero.css";
-import "../assets/css/common.css";
+import "../static/assets/css/common.css";
+import "../components/IndexCard.css";
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

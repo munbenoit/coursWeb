@@ -1,0 +1,27 @@
+.index-container {
+  height: calc(100vh - 76px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  margin: 0;
+}
+
+.index-section {
+  height: calc(100vh - 76px);
+  padding: 20px;
+  scroll-snap-align: end;
+}
+
+.index-section h1 {
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .index-section {
+    height: auto;
+    scroll-snap-align: initial;
+  }
+
+  .card {
+    margin: 10px 0;
+  }
+}

@@ -117,7 +117,7 @@ const hobbiesItems = [
 export default function cv() {
   return (
     <div className="cv-container">
-      <div data-spy="scroll" data-target="#test">
+      <div>
         <div className="cv-section">
           <h1 className="cv-section-title">Expérience professionnelle</h1>
           <Carousel id="professional" items={professionalItems}></Carousel>

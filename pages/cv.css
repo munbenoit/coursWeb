@@ -1,5 +1,5 @@
 .cv-container {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 76px);
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   margin: 0;
@@ -11,9 +11,13 @@
 }
 
 @media screen and (max-width: 767px) {
-  .my-container {
+  .cv-container {
     height: calc(100vh - 56px);
   }
+}
+
+.cv-section {
+  margin-bottom: 0;
 }
 
 .cv-section-title {
