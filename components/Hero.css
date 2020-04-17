@@ -1,0 +1,23 @@
+.hero {
+  height: calc(100vh - 76px);
+  background-image: url("../assets/images/background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.hero-section {
+  background-color: rgba(10, 10, 10, 0.6);
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+}
+
+blockquote {
+  margin-top: 20px;
+}

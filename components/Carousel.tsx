@@ -9,10 +9,11 @@ import {
 import SlidesScolar from "../types/Slide";
 
 interface Props {
+  id: string;
   items: SlidesScolar[];
 }
 
-const MyCarousel = ({ items }: Props) => {
+const MyCarousel = ({ id, items }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -40,10 +41,12 @@ const MyCarousel = ({ items }: Props) => {
         onExited={() => setAnimating(false)}
         key={item.index}
       >
-        <div className="slide-content scrollbar">
+        <div id={id} className="slide-content scrollbar">
           <h2 className="slide-title">{item.title}</h2>
-          <p className="slide-description">{item.description}</p>
-          <ul>
+          <p className="slide-description">
+            <i>{item.description}</i>
+          </p>
+          <ul className="cv-items">
             {item.details.map((detail) => (
               <li key={detail}>{detail}</li>
             ))}
@@ -58,12 +61,7 @@ const MyCarousel = ({ items }: Props) => {
   });
 
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      ride={20000}
-    >
+    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
       <CarouselIndicators
         items={items}
         activeIndex={activeIndex}

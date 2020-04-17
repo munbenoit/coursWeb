@@ -1,0 +1,18 @@
+.submenu {
+  display: flex;
+  flex-direction: row;
+}
+
+#activeLink {
+  color: red;
+}
+
+#navigation ul li {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .submenu {
+    flex-direction: column;
+  }
+}

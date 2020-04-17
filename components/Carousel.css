@@ -17,16 +17,16 @@
   margin-bottom: 40px;
 }
 
-ul {
+.cv-items {
   list-style: none;
   padding: 0;
 }
 
-ul li::first-letter {
+.cv-items li::first-letter {
   text-transform: capitalize;
 }
 
-ul li {
+.cv-items li {
   margin: 10px 0;
 }
 

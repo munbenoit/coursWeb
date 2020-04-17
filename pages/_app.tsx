@@ -1,10 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import App, { Container } from "next/app";
+import App from "next/app";
 import React from "react";
 import Layout from "../components/Layout";
 import "../components/Carousel.css";
 import "./cv.css";
 import "../components/Layout.css";
+import "../components/NavMenu.css";
+import "../components/Hero.css";
+import "../assets/css/common.css";
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -21,11 +24,9 @@ export default class MyApp extends App {
 
     return (
       <>
-        <Container>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Container>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </>
     );
   }

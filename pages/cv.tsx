@@ -49,6 +49,19 @@ const scolarItems = [
 const professionalItems = [
   {
     index: 1,
+    title: "Alternance 3ème année",
+    description: "3ème année du cursus Ingénieur en alternance",
+    location: "société Agaetis, Aubière",
+    date: "2019-2020",
+    details: [
+      "Développement Web: React/NextJS, Typescript, Google API (Gmail/Captcha)",
+      "Visualisation de données: Leaflet, Plotly",
+      "Outils de développement: Git, Gitkraken, AWS Lightsail, Docker",
+      "Base de données: PostgreSQL avec Postgis",
+    ],
+  },
+  {
+    index: 2,
     title: "Stage de 2ème année ISIMA",
     description: "Stage prévu par le cursus d'ingénieur",
     location: "société Agaetis, Aubière",
@@ -59,17 +72,7 @@ const professionalItems = [
       "Architecture: CQRS/Event Sourcing",
     ],
   },
-  {
-    index: 2,
-    title: "Alternance 3ème année",
-    description: "3ème année du cursus Ingénieur en alternance",
-    location: "société Agaetis, Aubière",
-    date: "2019-2020",
-    details: [
-      "Développement Web: React/NextJS, Typescript, Google API (Gmail/Captcha)",
-      "Outils de développement: Git, Gitkraken, AWS Lightsail, Docker",
-    ],
-  },
+
   {
     index: 3,
     title: "Travail en interim",
@@ -114,18 +117,18 @@ const hobbiesItems = [
 export default function cv() {
   return (
     <div className="cv-container">
-      <div>
+      <div data-spy="scroll" data-target="#test">
         <div className="cv-section">
           <h1 className="cv-section-title">Expérience professionnelle</h1>
-          <Carousel items={professionalItems}></Carousel>
+          <Carousel id="professional" items={professionalItems}></Carousel>
         </div>
         <div className="cv-section">
           <h1 className="cv-section-title">Parcours scolaire</h1>
-          <Carousel items={scolarItems}></Carousel>
+          <Carousel id="scolar" items={scolarItems}></Carousel>
         </div>
         <div className="cv-section">
           <h1 className="cv-section-title">Centres d'intérêt</h1>
-          <Carousel items={hobbiesItems}></Carousel>
+          <Carousel id="hobbies" items={hobbiesItems}></Carousel>
         </div>
       </div>
     </div>
