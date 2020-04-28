@@ -11,10 +11,10 @@ export default function index() {
         quote="Mankind invented the atomic bomb, but no mouse would ever construct
             a mousetrap."
         author="Albert Einstein"
-        className="hero index-hero index-section"
+        className="content-section hero index-hero"
       ></Hero>
       <Jumbotron className="my-0 py-0" fluid>
-        <Container fluid className="index-section">
+        <Container fluid className="content-section">
           <h1>Mon Parcours</h1>
           <Row>
             <Col md="4">

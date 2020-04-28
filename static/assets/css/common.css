@@ -20,8 +20,30 @@ h6 {
   margin: 0;
 }
 
+.content-section {
+  height: calc(100vh - 76px);
+  padding: 20px;
+  scroll-snap-align: end;
+}
+
+.content-section h1 {
+  padding: 20px 0;
+}
+
+.card-image {
+  max-height: 310px;
+}
+
 @media screen and (max-width: 767px) {
   .main-container {
     height: calc(100vh - 56px);
+  }
+
+  .content-section {
+    height: auto;
+    scroll-snap-align: initial;
+  }
+  .card {
+    margin: 10px 0;
   }
 }

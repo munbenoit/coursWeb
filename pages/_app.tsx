@@ -2,13 +2,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "next/app";
 import React from "react";
 import Layout from "../components/Layout";
-import "../components/Carousel.css";
+import "../static/assets/css/common.css";
 import "./index.css";
 import "./cv.css";
 import "../components/Layout.css";
 import "../components/NavMenu.css";
 import "../components/Hero.css";
-import "../static/assets/css/common.css";
+import "../components/CvCard.css";
+
 import "../components/IndexCard.css";
 
 export default class MyApp extends App {

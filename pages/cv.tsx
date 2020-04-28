@@ -1,49 +1,52 @@
 import React from "react";
-import Carousel from "../components/Carousel";
 import Hero from "../components/Hero";
+import { Jumbotron, Container, Row, Col } from "reactstrap";
+import clsx from "clsx";
+
+import CvCard from "../components/CvCard";
 
 const scolarItems = [
   {
     index: 1,
-    title: "Bacalauréat Scientifique, Mention Bien",
-    description: "",
+    title: "Baccalauréat Scientifique, Mention Bien",
+    description:
+      "Mention européenne en Espagnol avec certification Cervantès et spécialité Informatique et sciences du numérique au lycée Ambroise Brugière (Clermont-Ferrand)",
     location: "Lycée Ambroise Brugière, Clermont-Ferrand",
     date: "2015",
     details: [
       "Mention européenne en Espagnol avec certification Cervantès",
       "Spécialité: Informatique et sciences du numérique",
     ],
+    img: "../static/assets/images/webdev.jpg",
   },
   {
     index: 2,
     title: "Licence d'informatique et DU Prep'ISIMA",
     description:
-      "Cursus préparatoire pour une entrée directe à l'ISIMA suivi conjointement avec 2 années de licence en informatique.",
+      "Cursus préparatoire pour une entrée directe à l'ISIMA suivi conjointement avec 2 années de licence en informatique à l'UCA (Clermont-Ferrand).",
     location: "UCA, Clermont-Ferrand",
     date: "2015-2017",
     details: [
       "développement Web",
       "développement Java, Python, C",
-      "Algorithmique",
-      "Projet: Développement d'une application mobile permettant le contrôle d'un robot wifibot",
+      "Projet: application de contrôle robot wifibot",
     ],
+    img: "../static/assets/images/prepisima2.png",
   },
   {
     index: 3,
     title: "Diplôme d'ingénieur en informatique",
-    description: "Filière: Réseau et Sécurité (certifiée SecnumEdu)",
+    description:
+      "Etudiant à L'ISIMA (Clermont-Ferrand), dans la filière Réseau et Sécurité (certifiée SecnumEdu) et dernière année réalisée en alternance au sein d'Agaetis.",
     location: "ISIMA, Clermont-Ferrand",
     date: "2017-2020",
     details: [
-      "Développement Java, C, C++",
-      "Développement d'application mobile (Swift et Android)",
-      "Cloud Computing avec Microsoft Azure",
-      "Etude de Malware",
+      "Développement Swift et Android",
       "Sécurité liée à l'IOT",
-      "Projet: Reconnaisance de caractères par un réseau neuronnal avec Tensorflow",
+      "Projet: Reconnaisance de caractères avec Tensorflow",
       "Projet: Etude du fonctionnement du Bluetooth",
-      "3ème année suivie en Alternance au sein de la société Agaetis",
     ],
+    img: "../static/assets/images/bde_isima2.png",
   },
 ];
 
@@ -51,40 +54,29 @@ const professionalItems = [
   {
     index: 1,
     title: "Alternance 3ème année",
-    description: "3ème année du cursus Ingénieur en alternance",
-    location: "société Agaetis, Aubière",
+    description:
+      "3ème année du cursus Ingénieur en alternance en tant que développeur web à Agaetis.",
+
     date: "2019-2020",
-    details: [
-      "Développement Web: React/NextJS, Typescript, Google API (Gmail/Captcha)",
-      "Visualisation de données: Leaflet, Plotly",
-      "Outils de développement: Git, Gitkraken, AWS Lightsail, Docker",
-      "Base de données: PostgreSQL avec Postgis",
-    ],
+    img: "../static/assets/images/webdev.jpg",
   },
   {
     index: 2,
     title: "Stage de 2ème année ISIMA",
-    description: "Stage prévu par le cursus d'ingénieur",
-    location: "société Agaetis, Aubière",
+    description:
+      "Stage prévu par le cursus d'ingénieur en tant que développeur web à Agaetis.",
+
     date: "2019",
-    details: [
-      "Développement Web: React/NextJS, Typescript, Material UI",
-      "Outils de développement: Git, Gitkraken, Azure Devops, Docker",
-      "Architecture: CQRS/Event Sourcing",
-    ],
+    img: "../static/assets/images/webdev.jpg",
   },
 
   {
     index: 3,
     title: "Travail en interim",
-    description: "Technicien en broyage de pneumatiques",
-    location: "Procar Récygom, Joze",
+    description:
+      "Emploi durant les vacances scolaires, technicien en broyage de pneumatiques",
     date: "2015-2018",
-    details: [
-      "Utilisation et maintenance d'un broyeur de pneumatiques",
-      "Traitement de données logistiques avec Excel",
-      "Préparation d'audits internes",
-    ],
+    img: "../static/assets/images/tire.jpg",
   },
 ];
 
@@ -92,25 +84,96 @@ const hobbiesItems = [
   {
     index: 1,
     title: "Sports en tout genres",
-    description: "",
+    description:
+      "Pratique du football depuis 2006, ceinture noire 1dan de karaté, cardio et course à pied",
     location: "",
     date: "2006-",
-    details: [
-      "Pratique du football depuis 2006 (Clermont Foot jusqu'en 2010)",
-      "Ceinture noire 1dan de karaté au Gorinkan (Clermont-Ferrand)",
-      "Cardio et course à pied",
-    ],
+    img: "../static/assets/images/sport.jpg",
   },
   {
     index: 2,
     title: "Jeux de stratégies et jeux vidéos",
-    description: "",
+    description:
+      "Grand passionné des jeux Pokemon, membre de la Fédération française de Go (2kyu)",
     location: "",
     date: "depuis Toujours",
+    img: "../static/assets/images/game of go.jpg",
+  },
+];
+
+const skillsItems = [
+  {
+    index: 1,
+    title: "Développement web",
     details: [
-      "Grand passionné des jeux Pokemon",
-      "Participation à différents tournois organisés par le BDE (League of Legends)",
-      "Jeu de go: membre de la Fédération Française de Go (2kyu)",
+      {
+        techno: "ReactJS",
+        img: "../static/assets/images/reactjs.png",
+        logoClassName: "reactjs",
+      },
+      {
+        techno: "HTML/CSS/JS",
+        img: "../static/assets/images/html-css-js.png",
+        logoClassName: "html-css-js",
+      },
+      {
+        techno: "Typescript",
+        img: "../static/assets/images/Typescript_Logo.png",
+        logoClassName: "typescript",
+      },
+
+      {
+        techno: "Node JS",
+        img: "../static/assets/images/nodejs.png",
+        logoClassName: "nodejs",
+      },
+    ],
+  },
+  {
+    index: 2,
+    title: "Programmation",
+    details: [
+      {
+        techno: "Java",
+        img: "../static/assets/images/java.png",
+        logoClassName: "",
+      },
+      {
+        techno: "Python",
+        img: "../static/assets/images/python.png",
+        logoClassName: "",
+      },
+      {
+        techno: "C/C++",
+        img: "../static/assets/images/c++_pic.png",
+        logoClassName: "",
+      },
+    ],
+  },
+  {
+    index: 3,
+    title: "Archi/Outils de dev",
+    details: [
+      {
+        techno: "Git",
+        img: "../static/assets/images/git.png",
+        logoClassName: "",
+      },
+      {
+        techno: "Azure Devops",
+        img: "../static/assets/images/azure_devops.png",
+        logoClassName: "",
+      },
+      {
+        techno: "PostgreSQL",
+        img: "../static/assets/images/postgre.png",
+        logoClassName: "",
+      },
+      {
+        techno: "AWS Lighsail",
+        img: "../static/assets/images/aws.png",
+        logoClassName: "",
+      },
     ],
   },
 ];
@@ -121,23 +184,87 @@ export default function cv() {
       <div>
         <Hero
           title="Mon Parcours"
-          quote="Mankind invented the atomic bomb, but no mouse would ever construct
-            a mousetrap."
+          quote="Anyone who has never made a mistake has never tried anything new."
           author="Albert Einstein"
-          className="hero cv-hero cv-section"
+          className="content-section hero cv-hero "
         ></Hero>
-        <div className="cv-section">
-          <h1 className="cv-section-title">Expérience professionnelle</h1>
-          <Carousel id="professional" items={professionalItems}></Carousel>
-        </div>
-        <div className="cv-section">
-          <h1 className="cv-section-title">Parcours scolaire</h1>
-          <Carousel id="scolar" items={scolarItems}></Carousel>
-        </div>
-        <div className="cv-section">
-          <h1 className="cv-section-title">Centres d'intérêt</h1>
-          <Carousel id="hobbies" items={hobbiesItems}></Carousel>
-        </div>
+        <Jumbotron className="my-0 py-0" fluid>
+          <Container fluid className="content-section">
+            <h1>Experience professionnelle</h1>
+            <Row>
+              {professionalItems.map((item) => (
+                <Col md="4">
+                  <CvCard
+                    img={item.img}
+                    title={item.title}
+                    text={item.description}
+                    className="card"
+                    date={item.date}
+                  ></CvCard>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+          <Container fluid className="content-section">
+            <h1>Parcours scolaire</h1>
+            <Row>
+              {scolarItems.map((item) => (
+                <Col md="4">
+                  <CvCard
+                    img={item.img}
+                    title={item.title}
+                    text={item.description}
+                    className="card"
+                    date={item.date}
+                  ></CvCard>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+          <Container fluid className="content-section">
+            <h1>Compétences</h1>
+            <Row>
+              {skillsItems.map((item) => (
+                <Col md="4">
+                  <h2 className="skills-title">{item.title}</h2>
+                  <ul className="skills-list">
+                    {item.details.map((detail, index) => (
+                      <li
+                        className={clsx(
+                          index % 2 == 0 ? "regular" : "reversed"
+                        )}
+                      >
+                        {detail.img != "" && (
+                          <img
+                            src={detail.img}
+                            className={detail.logoClassName}
+                          ></img>
+                        )}
+                        <div>{detail.techno}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+          <Container fluid className="content-section">
+            <h1>Centres d'intérêts</h1>
+            <Row>
+              {hobbiesItems.map((item) => (
+                <Col md="4">
+                  <CvCard
+                    img={item.img}
+                    title={item.title}
+                    text={item.description}
+                    className="card"
+                    date={item.date}
+                  ></CvCard>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </Jumbotron>
       </div>
     </div>
   );
