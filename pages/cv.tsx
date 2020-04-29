@@ -194,7 +194,7 @@ export default function cv() {
             <h1>Experience professionnelle</h1>
             <Row>
               {professionalItems.map((item) => (
-                <Col md="4">
+                <Col md="4" key={item.title}>
                   <CvCard
                     img={item.img}
                     title={item.title}
@@ -210,7 +210,7 @@ export default function cv() {
             <h1>Parcours scolaire</h1>
             <Row>
               {scolarItems.map((item) => (
-                <Col md="4">
+                <Col md="4" key={item.title}>
                   <CvCard
                     img={item.img}
                     title={item.title}
@@ -226,11 +226,12 @@ export default function cv() {
             <h1>Compétences</h1>
             <Row>
               {skillsItems.map((item) => (
-                <Col md="4">
+                <Col md="4" key={item.title}>
                   <h2 className="skills-title">{item.title}</h2>
                   <ul className="skills-list">
                     {item.details.map((detail, index) => (
                       <li
+                        key={detail.techno}
                         className={clsx(
                           index % 2 == 0 ? "regular" : "reversed"
                         )}
@@ -253,7 +254,7 @@ export default function cv() {
             <h1>Centres d'intérêts</h1>
             <Row>
               {hobbiesItems.map((item) => (
-                <Col md="4">
+                <Col md="4" key={item.title}>
                   <CvCard
                     img={item.img}
                     title={item.title}

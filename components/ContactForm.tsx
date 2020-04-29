@@ -1,44 +1,79 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Row, Col, Button } from "reactstrap";
+import { ErrorMessage, Formik, Field, Form } from "formik";
+import { FormGroup, Label, Input, Row, Col, Button } from "reactstrap";
+import contactFormSchema, {
+  contactFormInitialValues,
+  ContactFormValues,
+} from "../yup/contactForm";
+import TextField from "./TextField";
+
+function submitForm(formValues: ContactFormValues) {
+  console.log({ ...formValues });
+}
 
 export default function ContactForm() {
   return (
-    <Form>
-      <Row>
-        <Col md="6">
-          <FormGroup>
-            <Label for="lastname">Nom</Label>
-            <Input id="lastname" />
-          </FormGroup>
-        </Col>
-        <Col md="6">
-          <FormGroup>
-            <Label for="firstname">Prénom</Label>
-            <Input id="firstname" />
-          </FormGroup>
-        </Col>
-        <Col md="6">
-          <FormGroup>
-            <Label for="company">Entreprise</Label>
-            <Input id="company" />
-          </FormGroup>
-        </Col>
-        <Col md="6">
-          <FormGroup>
-            <Label for="mail">Mail</Label>
-            <Input id="mail" />
-          </FormGroup>
-        </Col>
-        <Col xs="12">
-          <FormGroup>
-            <Label for="message">Votre message</Label>
-            <Input type="textarea" name="text" id="message" />
-          </FormGroup>
-        </Col>
-        <Col>
-          <Button className="form-submit">Envoyer</Button>
-        </Col>
-      </Row>
-    </Form>
+    <Formik
+      initialValues={contactFormInitialValues}
+      validationSchema={contactFormSchema}
+      onSubmit={(fields) => submitForm(fields!)}
+    >
+      {({ errors, touched }) => (
+        <Form>
+          <Row>
+            <Col md="6">
+              <TextField
+                label="Nom"
+                name="lastname"
+                isValid={!errors.lastname && !touched.lastname}
+                type="text"
+              ></TextField>
+            </Col>
+            <Col md="6">
+              <TextField
+                label="Prénom"
+                name="firstname"
+                isValid={!errors.firstname && !touched.firstname}
+                type="text"
+              ></TextField>
+            </Col>
+            <Col md="6">
+              <TextField
+                label="Entreprise"
+                name="company"
+                isValid={!errors.company && !touched.company}
+                type="text"
+              ></TextField>
+            </Col>
+            <Col md="6">
+              <TextField
+                label="Email"
+                name="email"
+                isValid={!errors.email && !touched.email}
+                type="text"
+              ></TextField>
+            </Col>
+            <Col xs="12">
+              <FormGroup>
+                <Field
+                  component="textarea"
+                  name="message"
+                  id="message"
+                  className="form-control"
+                />
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className="errorMessage"
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <Button className="form-submit">Envoyer</Button>
+            </Col>
+          </Row>
+        </Form>
+      )}
+    </Formik>
   );
 }

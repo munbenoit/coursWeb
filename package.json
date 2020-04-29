@@ -14,10 +14,12 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "clsx": "^1.1.0",
+    "formik": "^2.1.4",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "yup": "^0.28.4"
   },
   "devDependencies": {
     "@types/node": "^13.11.1",
