@@ -4,6 +4,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 h1,
 h2,
 h3,

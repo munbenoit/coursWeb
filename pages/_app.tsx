@@ -9,8 +9,9 @@ import "../components/Layout.css";
 import "../components/NavMenu.css";
 import "../components/Hero.css";
 import "../components/CvCard.css";
-
+import "../components/Footer.css";
 import "../components/IndexCard.css";
+import "../components/ContactForm.css";
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

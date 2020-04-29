@@ -4,6 +4,7 @@ import { Jumbotron, Container, Row, Col } from "reactstrap";
 import clsx from "clsx";
 
 import CvCard from "../components/CvCard";
+import Footer from "../components/Footer";
 
 const scolarItems = [
   {
@@ -265,6 +266,7 @@ export default function cv() {
             </Row>
           </Container>
         </Jumbotron>
+        <Footer></Footer>
       </div>
     </div>
   );

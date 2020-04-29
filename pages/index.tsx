@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import { Jumbotron, Container, Row, Col } from "reactstrap";
 import IndexCard from "../components/IndexCard";
+import Footer from "../components/Footer";
 
 export default function index() {
   return (
@@ -48,6 +49,7 @@ export default function index() {
           </Row>
         </Container>
       </Jumbotron>
+      <Footer></Footer>
     </div>
   );
 }
