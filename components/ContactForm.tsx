@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { ErrorMessage, Formik, Field, Form } from "formik";
 import { FormGroup, Label, Input, Row, Col, Button } from "reactstrap";
 import contactFormSchema, {
@@ -6,12 +6,46 @@ import contactFormSchema, {
   ContactFormValues,
 } from "../yup/contactForm";
 import TextField from "./TextField";
-
-function submitForm(formValues: ContactFormValues) {
-  console.log({ ...formValues });
-}
+import sendMessage from "../services/contactService";
+import ReCAPTCHA from "react-google-recaptcha";
+import publicRuntimeConfig from "../config/env.config";
+import ContactMessage from "./ContactMessage";
 
 export default function ContactForm() {
+  const [isOpenenedModal, setOpenModal] = useState(false);
+  const [isError, setIsError] = useState(true);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  function handleOpenModal(error: boolean) {
+    setIsError(error);
+    setOpenModal(true);
+    setTimeout(() => {
+      setOpenModal(false);
+    }, 3000);
+  }
+
+  async function submitForm(formValues: ContactFormValues) {
+    const captcha = recaptchaRef.current.getValue();
+    if (
+      formValues &&
+      formValues.firstname &&
+      formValues.lastname &&
+      formValues.email &&
+      formValues.message &&
+      formValues.company &&
+      captcha
+    ) {
+      try {
+        await sendMessage(formValues, captcha, new Date());
+        handleOpenModal(false);
+      } catch {
+        handleOpenModal(true);
+      }
+    } else {
+      handleOpenModal(true);
+    }
+  }
+
   return (
     <Formik
       initialValues={contactFormInitialValues}
@@ -68,10 +102,24 @@ export default function ContactForm() {
                 />
               </FormGroup>
             </Col>
+
             <Col>
-              <Button className="form-submit">Envoyer</Button>
+              <FormGroup>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  size="normal"
+                  sitekey={publicRuntimeConfig.NEXT_APP_RECAPTCHA_KEY}
+                  className="captcha"
+                ></ReCAPTCHA>
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Button className="form-submit">Envoyer</Button>
+              </FormGroup>
             </Col>
           </Row>
+          {isOpenenedModal && <ContactMessage error={false} />}
         </Form>
       )}
     </Formik>

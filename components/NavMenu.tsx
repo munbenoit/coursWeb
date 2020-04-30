@@ -56,6 +56,11 @@ export default function NavMenu() {
               </NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="#skills" onClick={toggle}>
+                Mes compétences
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="#hobbies" onClick={toggle}>
                 Centres d'intérêt
               </NavLink>

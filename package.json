@@ -7,18 +7,31 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "server:start": "ts-node ./server.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "clsx": "^1.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "formik": "^2.1.4",
+    "googleapis": "^49.0.0",
+    "http": "0.0.1-security",
+    "js-sha256": "^0.9.0",
     "next": "^9.3.5",
+    "next-images": "^1.4.0",
+    "nodemailer": "^6.4.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha": "^2.0.1",
     "reactstrap": "^8.4.1",
+    "ts-node": "^8.9.1",
     "yup": "^0.28.4"
   },
   "devDependencies": {

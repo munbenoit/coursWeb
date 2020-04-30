@@ -1,5 +1,6 @@
 #message {
-  min-height: 250px;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 #message::-webkit-scrollbar {
@@ -21,4 +22,12 @@
 
 .form-submit:hover {
   background-color: #646464cb;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.captcha {
+  height: 50px;
 }

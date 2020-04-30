@@ -190,7 +190,7 @@ export default function cv() {
           className="content-section hero cv-hero "
         ></Hero>
         <Jumbotron className="my-0 py-0" fluid>
-          <Container fluid className="content-section">
+          <Container fluid className="content-section" id="professional">
             <h1>Experience professionnelle</h1>
             <Row>
               {professionalItems.map((item) => (
@@ -206,7 +206,7 @@ export default function cv() {
               ))}
             </Row>
           </Container>
-          <Container fluid className="content-section">
+          <Container fluid className="content-section" id="scolar">
             <h1>Parcours scolaire</h1>
             <Row>
               {scolarItems.map((item) => (
@@ -222,7 +222,7 @@ export default function cv() {
               ))}
             </Row>
           </Container>
-          <Container fluid className="content-section">
+          <Container fluid className="content-section" id="skills">
             <h1>Compétences</h1>
             <Row>
               {skillsItems.map((item) => (
@@ -250,7 +250,7 @@ export default function cv() {
               ))}
             </Row>
           </Container>
-          <Container fluid className="content-section">
+          <Container fluid className="content-section" id="hobbies">
             <h1>Centres d'intérêts</h1>
             <Row>
               {hobbiesItems.map((item) => (
