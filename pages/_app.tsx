@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "next/app";
 import React from "react";
 import Layout from "../components/Layout";
+import Head from "next/head";
 import "../static/assets/css/common.css";
 import "./index.css";
 import "./cv.css";
@@ -29,6 +30,9 @@ export default class MyApp extends App {
 
     return (
       <>
+        <Head>
+          <title>Cours Web</title>
+        </Head>
         <Layout>
           <Component {...pageProps} />
         </Layout>

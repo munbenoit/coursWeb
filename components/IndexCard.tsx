@@ -31,6 +31,7 @@ export default function IndexCard({
           src={img}
           alt={title}
           className="card-image"
+          loading="lazy"
         />
         <CardBody>
           <CardTitle>{title}</CardTitle>

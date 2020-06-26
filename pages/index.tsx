@@ -20,7 +20,7 @@ export default function index() {
           <Row>
             <Col md="4">
               <IndexCard
-                img="../static/assets/images/webdev.jpg"
+                img="../static/assets/images/webdev resized.jpg"
                 title="Expérience professionnelle"
                 text="Découvrir mes expériences dans le monde du travail."
                 link="/cv#professional"
@@ -29,7 +29,7 @@ export default function index() {
             </Col>
             <Col md="4">
               <IndexCard
-                img="../static/assets/images/study.jpg"
+                img="../static/assets/images/study resized.jpg"
                 title="Parcours scolaire"
                 text="Tour d'horizon des sujets abordés lors de mes études."
                 link="/cv#scolar"
@@ -39,7 +39,7 @@ export default function index() {
 
             <Col md="4">
               <IndexCard
-                img="../static/assets/images/game of go.jpg"
+                img="../static/assets/images/game of go resized.jpg"
                 title="Centres d'intérêt"
                 text="Voyage jusqu'au bout de ma passion pour le Go."
                 link="/cv#hobbies"

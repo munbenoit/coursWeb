@@ -18,7 +18,7 @@ const scolarItems = [
       "Mention européenne en Espagnol avec certification Cervantès",
       "Spécialité: Informatique et sciences du numérique",
     ],
-    img: "../static/assets/images/webdev.jpg",
+    img: "../static/assets/images/webdev resized.jpg",
   },
   {
     index: 2,
@@ -59,7 +59,7 @@ const professionalItems = [
       "3ème année du cursus Ingénieur en alternance en tant que développeur web à Agaetis.",
 
     date: "2019-2020",
-    img: "../static/assets/images/webdev.jpg",
+    img: "../static/assets/images/webdev resized.jpg",
   },
   {
     index: 2,
@@ -68,7 +68,7 @@ const professionalItems = [
       "Stage prévu par le cursus d'ingénieur en tant que développeur web à Agaetis.",
 
     date: "2019",
-    img: "../static/assets/images/webdev.jpg",
+    img: "../static/assets/images/webdev resized.jpg",
   },
 
   {
@@ -77,7 +77,7 @@ const professionalItems = [
     description:
       "Emploi durant les vacances scolaires, technicien en broyage de pneumatiques",
     date: "2015-2018",
-    img: "../static/assets/images/tire.jpg",
+    img: "../static/assets/images/tire resized.jpg",
   },
 ];
 
@@ -89,7 +89,7 @@ const hobbiesItems = [
       "Pratique du football depuis 2006, ceinture noire 1dan de karaté, cardio et course à pied",
     location: "",
     date: "2006-",
-    img: "../static/assets/images/sport.jpg",
+    img: "../static/assets/images/sport resized.jpg",
   },
   {
     index: 2,
@@ -98,7 +98,7 @@ const hobbiesItems = [
       "Grand passionné des jeux Pokemon, membre de la Fédération française de Go (2kyu)",
     location: "",
     date: "depuis Toujours",
-    img: "../static/assets/images/game of go.jpg",
+    img: "../static/assets/images/game of go resized.jpg",
   },
 ];
 
@@ -119,7 +119,7 @@ const skillsItems = [
       },
       {
         techno: "Typescript",
-        img: "../static/assets/images/Typescript_Logo.png",
+        img: "../static/assets/images/TypeScript_Logo.png",
         logoClassName: "typescript",
       },
 
@@ -240,6 +240,8 @@ export default function cv() {
                           <img
                             src={detail.img}
                             className={detail.logoClassName}
+                            loading="lazy"
+                            alt={detail.techno}
                           ></img>
                         )}
                         <div>{detail.techno}</div>

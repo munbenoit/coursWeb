@@ -64,8 +64,8 @@ app.post("/send", (req: Request, res: Response) => {
   });
 
   const message = {
-    from: process.env.NEXT_APP_MAIL_ADDRESS,
-    to: process.env.NEXT_APP_MAIL_ADDRESS,
+    from: req.body.email,
+    to: "benoit.munoz@agaetis.fr",
     subject: "Demande de contact via site web cours Web",
     html: req.body.message,
   };
